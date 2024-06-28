@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    grid-template: 1fr 5fr / 1fr 5fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template: 1fr 1fr / 3fr 1fr;
+    gap: 15px 30px;
+    padding: 15px 45px;
+    grid-template-areas:
+        "search user"
+        "greeting action";
+}
+
+.search {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search .icon {
+    width: 28px;
+    height: 28px;
+
+}
+
+.search input,
+.search input:focus {
+    width: 100%;
+    height: 32px;
+    background-color: #dbeafe;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    
+}
+
+.user {
+    grid-area: user;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.user .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.user .avatar img {
+    width: 48px;
+    height: 48px;
+}
+
+.user .name {
+    margin: 0;
+    font-weight: 700;
+}   
+
+.greeting {
+    grid-area: greeting;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.greeting .avatar img {
+    width: 64px;
+    height: 64px;
+}
+
+.greeting .name {
+    font-weight: 700;
+}
+
+.greeting .name p {
+   margin: 0;
+}
+
+.greeting .name p:first-child {
+    font-size: 0.9rem;
+ }
+
+.greeting .name p:last-child {
+    font-size: 1.3rem;
+}
+
+.action {
+    grid-area: action;
+    align-self: center;
+    display: flex;
+    gap: 20px;
+}
+
+.action button {
+    cursor: pointer;
+    border: none;
+    background-color: #0284c7;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.main-content {
+    grid-area: main-content;
+    background-color: #dbeafe;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 25px;
+    padding: 15px 45px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-left: 15px solid #fb923c;
+    border-radius: 10px;
+    padding: 50px 25px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.card p {
+    margin: 0;
+    color: #4b5563;
+    margin-bottom: 45px;
+}
+
+.card .icons {
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+}
+
+.card .icons div {
+    width: 32px;
+    height: 32px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.card .icons .fork {
+    width: 28px;
+    height: 28px;
+}
+
+.widget-a-content,
+.widget-t-content {
+    background-color: #ffffff;
+    border-radius: 13px;
+    padding: 40px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+}
+
+.widget-a-content div {
+    padding: 15px 0;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.widget-a-content div:last-child {
+    border-bottom: none;
+}
+
+.widget-a-content div h3 {
+    margin: 0;
+    line-height: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.widget-a-content div p {
+    margin: 0;
+    color: #4b5563;
+}
+
+.widget-t-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.widget-t-content div {
+    display: grid;
+    grid-template:
+        "avatar nickname"
+        "avatar motto"
+        / 1fr 3fr;
+    gap: 0 15px;
+}
+
+.widget-t-content div .avatar {
+    width: 64px;
+    height: 64px;
+    grid-area: avatar;
+    align-self: center;
+}
+
+.widget-t-content div .nickname {
+    margin: 0;
+    grid-area: nickname;
+    align-self: end;
+}
+
+.widget-t-content div .motto {
+    margin: 0;
+    grid-area: motto;
+    color: #4b5563;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: #0284c7;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.brand {
+    margin-bottom: 45px;
+}
+
+.brand,
+.nav li {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand .logo {
+    width: 48px;
+    height: 48px;
+    color: #ffffff;
+}
+
+.brand .title {
+    margin: 0;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 45px;
+}
+
+.nav li {
+    margin-bottom: 15px;
+}
+
+.nav li .nav-icon {
+    width: 30px;
+    height: 30px;
+    justify-self: center;
+}
+
+.nav li .nav-link {
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
